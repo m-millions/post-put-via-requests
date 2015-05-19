@@ -14,6 +14,7 @@ _OAUTH = OAuth1(client_key=client_key, client_secret=client_secret,
                resource_owner_key=token_key, resource_owner_secret=token_secret,
                signature_type = 'auth_header')
 
+#TO DO:  Handle 220 and 405 Responses
 def post_candiate():
     '''
     POST Candidate's Information
@@ -36,7 +37,7 @@ def post_candiate():
     #print results
     post_candidate_resume()
 
-
+#TO DO:  Handle 220 and 405 Responses
 def post_candidate_resume():
     '''
     PUT Candidate's Resume
