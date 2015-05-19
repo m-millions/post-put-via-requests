@@ -14,7 +14,6 @@ _OAUTH = OAuth1(client_key=client_key, client_secret=client_secret,
                resource_owner_key=token_key, resource_owner_secret=token_secret,
                signature_type = 'auth_header')
 
-
 def post_candiate():
     '''
     POST Candidate's Information
@@ -34,7 +33,7 @@ def post_candiate():
                            data=json.dumps(payload),
                            headers=headers)
     results = json.loads(response.content)
-    print results
+    #print results
     post_candidate_resume()
 
 
@@ -50,7 +49,7 @@ def post_candidate_resume():
                           auth=_OAUTH,
                           files=files)
     results = response.content
-    print results
+    #print results
 
 #POST a new candidate
 post_candiate()
