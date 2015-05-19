@@ -15,7 +15,7 @@ _OAUTH = OAuth1(client_key=client_key, client_secret=client_secret,
                signature_type = 'auth_header')
 
 #TO DO:  Handle 220 and 405 Responses
-def post_candiate():
+def post_candidate():
     '''
     POST Candidate's Information
     '''
@@ -53,4 +53,4 @@ def post_candidate_resume():
     #print results
 
 #POST a new candidate
-post_candiate()
+post_candidate()
