@@ -33,7 +33,7 @@ def post_candidate():
                'projects[]': ['https://github.com/mmillions',
                'https://github.com/mmillions/post-put-via-requests'],
                'source':'Some Agency',
-               'resume': resume}}
+               'resume': resume}
     headers = {'content-type': 'application/json'}
     client = requests.session()
     response = client.post(url,
