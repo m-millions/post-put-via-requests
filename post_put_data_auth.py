@@ -1,6 +1,6 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import base64
 import json
 import requests
 from requests_oauthlib import OAuth1
@@ -19,14 +19,19 @@ def post_candidate():
     '''
     POST Candidate's Information
     '''
+    with open('some_file.pdf', 'rb') as f:
+        resume = base64.b64encode(f.read())
     url = 'http://api.somedestination.com/v3/candidates'
-    payload = {'candidate_id': 'VHXOY9U727', 'first_name': 'Willie',
-               'last_name': 'Smith',\
-               'email': 'someemail@service.com', 'position_id': 'CEO',
+    payload = {'candidate_id': 'VHXOY9U727',
+               'first_name': 'Willie',
+               'last_name': 'Smith',
+               'email': 'someemail@service.com',
+               'position_id': 'CEO',
                'explanation': 'put and post data via PYTHONS REQUESTS',
                'projects[]': ['https://github.com/mmillions',
                'https://github.com/mmillions/post-put-via-requests'],
-               'source':'Some Agency'}
+               'source':'Some Agency',
+               'resume': resume}}
     headers = {'content-type': 'application/json'}
     client = requests.session()
     response = client.post(url,
