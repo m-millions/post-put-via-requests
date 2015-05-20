@@ -10,9 +10,11 @@ client_key = '7891011'
 client_secret = 'qN2AV7Ig'
 token_key = '2T4rRK2x8dybmfX2NdpU9HCn6cdVEtyPLejLK6P3yMK5K5EbWnRd3ZsxmcwagH08XY'
 token_secret = 'VYn4FipgxqnlzRKjjFeUuA'
-_OAUTH = OAuth1(client_key=client_key, client_secret=client_secret,
-               resource_owner_key=token_key, resource_owner_secret=token_secret,
-               signature_type = 'auth_header')
+_OAUTH = OAuth1(client_key=client_key,
+                client_secret=client_secret,
+                resource_owner_key=token_key,
+                resource_owner_secret=token_secret,
+                signature_type = 'auth_header')
 
 #TO DO:  Handle 220 and 405 Responses
 def post_candidate():
