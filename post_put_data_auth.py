@@ -19,7 +19,24 @@ _OAUTH = OAuth1(client_key=client_key,
 #TO DO:  Handle 220 and 405 Responses
 def post_candidate():
     '''
-    POST Candidate's Information
+    POSTs Candidate's Information including a PDF version of their resume
+    as a base64 encoded string.
+    In this usecase the JSON dict of the JSON object will contain the resume,
+    and will look something like this:
+
+    {u'files': {}, ...},
+    u'json':
+    {'candidate_id': 'VHXOY9U727',
+    u'first_name': u'Willie',
+    u'last_name': u'Smith',
+    u'position_id': u'CEO',
+    u'explanation': u'Post JSON via Pythons REQUESTS library...',
+    u'source': u'Some Agency',
+    u'projects[]': [u'https:...', u'https:...'],
+    u'email': u'someemail@service.com',
+    u'resume' = 'A0Njk5OCAwMDAwMCBuIMDAwMDQ3MjM3IDAwMDAwIG4gCjAwMDAwNTA... '}
+    ...'}
+
     '''
     with open('some_file.pdf', 'rb') as f:
         resume = base64.b64encode(f.read())
@@ -47,7 +64,16 @@ def post_candidate():
 #TO DO:  Handle 220 and 405 Responses
 def put_candidate_resume():
     '''
-    PUT Candidate's Resume
+    PUTs Candidate's Resume by adding a PDF file associated via the
+    'candidate_id' value, which was passed via the "post_candidate" function.
+    In this usecase the FILE dict of the JSON object will contain the resume,
+    and will look something like this:
+
+    {u'files': {'A0Njk5OCAwMDAwMCBuIAowMDAwMDQ3MjM3IDAwMDAwIG4gCjAMDAwNTA... '},
+    ...},
+    u'json': {}
+    ...'}
+
     '''
     url = 'http://api.somedestination.com/v3/candidates/VHXOY9U727/resumes'
     files = {'file': open('some_file.pdf', 'rb')}
@@ -59,5 +85,5 @@ def put_candidate_resume():
     results = response.content
     #print results
 
-#POST a new candidate
+#POST a new candidate's data
 post_candidate()
