@@ -21,8 +21,9 @@ def post_candidate():
     '''
     POSTs Candidate's Information including a PDF version of their resume
     as a base64 encoded string.
-    In this usecase the JSON dict of the passed object will contain the resume,
-    and will look something like this:
+
+    In this usecase the JSON dict of the passed object will contain the resume
+    as a base64 encoded string - resulting in something that looks like this:
 
     {u'files': {}, ...},
     u'json':
@@ -66,8 +67,10 @@ def put_candidate_resume():
     '''
     PUTs Candidate's Resume by adding a PDF file associated via the
     'candidate_id' value, which was passed via the "post_candidate" function.
-    In this usecase the FILE dict of the passed object will contain the resume,
-    and will look something like this:
+
+    In this usecase the JSON dict of the passed object will remain empty, and
+    the FILE dict will contain the resume - resulting in something that looks
+    like this:
 
     {u'files': {'A0Njk5OCAwMDAwMCBuIAowMDAwMDQ3MjM3IDAwMDAwIG4gCjAMDAwNTA... '},
     ...},
