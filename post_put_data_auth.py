@@ -42,10 +42,10 @@ def post_candidate():
                            headers=headers)
     results = json.loads(response.content)
     #print results
-    post_candidate_resume()
+    put_candidate_resume()
 
 #TO DO:  Handle 220 and 405 Responses
-def post_candidate_resume():
+def put_candidate_resume():
     '''
     PUT Candidate's Resume
     '''
