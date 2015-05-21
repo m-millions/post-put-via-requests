@@ -26,18 +26,17 @@ def post_candidate():
     as a base64 encoded string - resulting in something that looks like this:
 
     {u'files': {}, ...},
-    u'json':
-    {'candidate_id': 'VHXOY9U727',
-    u'first_name': u'Willie',
-    u'last_name': u'Smith',
-    u'position_id': u'CEO',
-    u'explanation': u'Post JSON via Pythons REQUESTS library...',
-    u'source': u'Some Agency',
-    u'projects[]': [u'https:...', u'https:...'],
-    u'email': u'someemail@service.com',
-    u'resume' = 'A0Njk5OCAwMDAwMCBuIMDAwMDQ3MjM3IDAwMDAwIG4gCjAwMDAwNTA... '}
-    ...'}
-
+     u'json':
+      {u'candidate_id': 'VHXOY9U727',
+       u'first_name': u'Willie',
+       u'last_name': u'Smith',
+       u'position_id': u'CEO',
+       u'explanation': u'Post JSON via Pythons REQUESTS library...',
+       u'source': u'Some Agency',
+       u'projects[]': [u'https:...', u'https:...'],
+       u'email': u'someemail@service.com',
+       u'resume' = 'A0Njk5OCAwMDAwMCBuIMDAwMDQ3MjM3IDAwMDAwIG4gCjAwMDAwNTA... '}
+      ...'}
     '''
     with open('some_file.pdf', 'rb') as f:
         resume = base64.b64encode(f.read())
@@ -73,8 +72,8 @@ def put_candidate_resume():
     like this:
 
     {u'files': {'A0Njk5OCAwMDAwMCBuIAowMDAwMDQ3MjM3IDAwMDAwIG4gCjAMDAwNTA... '},
-    ...},
-    u'json': {}
+     ...},
+     u'json': {}
     ...'}
 
     '''
