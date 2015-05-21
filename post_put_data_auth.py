@@ -75,7 +75,6 @@ def put_candidate_resume():
      ...},
      u'json': {}
     ...'}
-
     '''
     url = 'http://api.somedestination.com/v3/candidates/VHXOY9U727/resumes'
     files = {'file': open('some_file.pdf', 'rb')}
